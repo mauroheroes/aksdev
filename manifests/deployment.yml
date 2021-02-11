@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mauroheroesaksdev 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mauroheroesaksdev
+  template:
+    metadata:
+      labels:
+        app: mauroheroesaksdev 
+    spec:
+      containers:
+        - name: mauroheroesaksdev 
+          image: repoaksdev.azurecr.io/mauroheroesaksdev
+          ports:
+          - containerPort: 80
