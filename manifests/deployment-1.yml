@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8sregion1-a1ee"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8sregion1-a1ee"
+  template:
+    metadata:
+      labels:
+        app: "k8sregion1-a1ee"
+    spec:
+      containers:
+        - name: "k8sregion1-a1ee"
+          image: "repok8s.azurecr.io/k8sregion1"
+          ports:
+          - containerPort: 80
